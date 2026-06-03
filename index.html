@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Natasya 💛</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:linear-gradient(135deg,#fef3c7,#fde68a);
+height:100vh;overflow:hidden;
+}
+.step{
+display:none;
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+.active{display:block;}
+.wrap{height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.btn{
+background:linear-gradient(135deg,#f59e0b,#fbbf24);
+color:white;border:none;padding:12px 24px;
+border-radius:999px;font-weight:bold;cursor:pointer;
+}
+.title{
+background:linear-gradient(135deg,#f59e0b,#fbbf24,#fde047);
+-webkit-background-clip:text;color:transparent;
+}
+img{border-radius:20px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="step active" id="s1">
+<h1 class="title text-5xl font-bold">Happy Birthday Natasya 💛</h1>
+<p class="mt-6 text-xl">I made a little surprise just for you.</p>
+<button class="btn mt-6" onclick="show(2)">Open Surprise ✨</button>
+</div>
+
+<div class="step" id="s2">
+<h2 class="title text-4xl font-bold">🎂 Happy Birthday! 🎂</h2>
+<p class="mt-6 text-lg">
+I hope this year brings you happiness, success, good health and lots of beautiful memories.
+</p>
+<p class="mt-4 text-lg">
+Thank you for making my days brighter. 💛
+</p>
+<button class="btn mt-6" onclick="show(3)">One More Thing...</button>
+</div>
+
+<div class="step" id="s3">
+<h2 class="title text-4xl font-bold">🤗 A Big Hug For You</h2>
+<img src="images.webp" width="220" class="mx-auto mt-6">
+<p class="mt-4 text-lg">
+If I could, I would give you the biggest birthday hug right now.
+</p>
+<button class="btn mt-6" onclick="show(4)">Final Message</button>
+</div>
+
+<div class="step" id="s4">
+<h2 class="title text-4xl font-bold">💛 Just One More Thing...</h2>
+<p class="mt-6 text-xl">I hope you smile today as much as you make me smile.</p>
+<p class="mt-4 text-2xl font-bold text-yellow-600">Happy Birthday Natasya 💛</p>
+<button class="btn mt-6" onclick="celebrate()">Celebrate 🎉</button>
+</div>
+
+</div>
+
+<script>
+function show(n){
+document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));
+document.getElementById('s'+n).classList.add('active');
+}
+
+function celebrate(){
+confetti({particleCount:200,spread:90,colors:['#f59e0b','#fbbf24','#fde047','#fef08a']});
+}
+</script>
+
+</body>
+</html>
